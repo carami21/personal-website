@@ -1,5 +1,4 @@
 const CURRENTLY_BUILDING = [
-  'Pool Map',
   'Supply Chain Forecasting Dashboard',
   'BI Pipeline Project',
 ]
@@ -28,9 +27,9 @@ export default function About() {
           </p>
           <p className="mt-6 max-w-prose leading-relaxed text-cream/85">
             I grew up on a PS2 and a CRT in a dark room, and I never really stopped pressing
-            START. Now I build iOS apps, data pipelines, and dashboards — from Pool Map on
-            TestFlight to a 50,000-record analytics project and an AI sustainability app built
-            on Intel corporate data. Next save point: the W.P. Carey MSBA (Supply Chain
+            START. Now I build iOS apps, data pipelines, and dashboards — from Pool Map, shipped
+            on the App Store, to a 50,000-record analytics project and an AI sustainability
+            app built on Intel corporate data. Next save point: the W.P. Carey MSBA (Supply Chain
             Analytics) at ASU, on the way to building things that ship, scale, and pay for
             themselves.
           </p>

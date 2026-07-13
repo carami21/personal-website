@@ -9,9 +9,10 @@ type Project = {
 const PROJECTS: Project[] = [
   {
     name: 'Pool Map',
-    description: 'iOS app for finding and checking into pools — live on TestFlight, heading to the App Store.',
-    tags: ['Swift', 'iOS', 'MapKit', 'Firebase'],
-    status: 'LIVE ON TESTFLIGHT',
+    description: 'iOS app for finding and checking into pools — shipped and live on the App Store, built with my partner Andre.',
+    tags: ['React Native', 'Expo', 'Express', 'PostgreSQL'],
+    status: 'SHIPPED — APP STORE',
+    href: 'https://poolmap.live',
   },
   {
     name: 'Supply Chain Forecasting Dashboard',
@@ -44,7 +45,15 @@ export default function Projects() {
           {PROJECTS.map((p) => (
             <article key={p.name} className="glass-card cursor-pointer rounded-lg p-6">
               <div className="flex items-start justify-between gap-4">
-                <h3 className="font-heading text-xl font-semibold text-cream">{p.name}</h3>
+                <h3 className="font-heading text-xl font-semibold text-cream">
+                  {p.href ? (
+                    <a href={p.href} target="_blank" rel="noreferrer">
+                      {p.name}
+                    </a>
+                  ) : (
+                    p.name
+                  )}
+                </h3>
                 <span className="shrink-0 rounded border border-ps2/30 px-2 py-0.5 font-mono text-[10px] tracking-wider text-ps2-light">
                   {p.status}
                 </span>
