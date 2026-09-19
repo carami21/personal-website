@@ -1,3 +1,7 @@
+import dynamic from 'next/dynamic'
+
+const ResumeViewer3D = dynamic(() => import('./ResumeViewer3D'), { ssr: false })
+
 const HIGHLIGHTS = [
   'B.S. Computer Science — full-stack + data foundations',
   '50,000+ record analysis with Tableau dashboards (Global Career Accelerator)',
@@ -12,6 +16,10 @@ export default function Resume() {
         <p className="section-label mb-4">// Status Screen</p>
         <h2 className="font-heading text-3xl font-bold md:text-4xl">Resume</h2>
 
+        <div className="mt-10">
+          <ResumeViewer3D />
+        </div>
+
         <ul className="mx-auto mt-10 max-w-xl space-y-4 text-left">
           {HIGHLIGHTS.map((h) => (
             <li key={h} className="flex items-start gap-3 text-cream/85">
@@ -23,11 +31,9 @@ export default function Resume() {
           ))}
         </ul>
 
-        {/* PS2 menu-style button. Swap href for the real PDF when ready. */}
         <a
-          href="https://www.linkedin.com/in/carlos-ramirez-10024b289/"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="/resume.pdf"
+          download="Carlos-Ramirez-Resume.pdf"
           className="group mt-12 inline-flex cursor-pointer items-center gap-3 rounded border border-ps2/60 bg-ps2/10 px-8 py-4 font-heading text-base tracking-wide text-cream transition-all duration-200 hover:border-ps2 hover:bg-ps2/20"
           style={{ boxShadow: '0 0 24px rgba(74,122,255,0.25)' }}
         >
@@ -36,9 +42,6 @@ export default function Resume() {
             <path d="M8 12h8M12 8v8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
           </svg>
           Download Resume
-          <span className="font-mono text-xs text-muted transition-colors group-hover:text-ps2-light">
-            [ COMING SOON — LINKEDIN FOR NOW ]
-          </span>
         </a>
       </div>
     </section>
