@@ -9,7 +9,12 @@ const LINKS = [
   { href: '#contact', label: 'Contact' },
 ]
 
-export default function Nav() {
+type NavProps = {
+  /** Returns the visitor to the START screen the site opens on. */
+  onHome: () => void
+}
+
+export default function Nav({ onHome }: NavProps) {
   const [open, setOpen] = useState(false)
 
   return (
@@ -19,13 +24,19 @@ export default function Nav() {
         style={{ background: 'rgba(10,10,15,0.85)', backdropFilter: 'blur(12px)' }}
         aria-label="Main navigation"
       >
-        <a
-          href="#top"
-          className="font-heading text-xl font-bold tracking-[0.2em] text-ps2-light"
+        <button
+          type="button"
+          onClick={() => {
+            setOpen(false)
+            onHome()
+          }}
+          title="Back to the start screen"
+          aria-label="Back to the start screen"
+          className="cursor-pointer font-heading text-xl font-bold tracking-[0.2em] text-ps2-light transition-colors duration-200 hover:text-cream"
           style={{ textShadow: '0 0 12px rgba(74,122,255,0.6)' }}
         >
           CR
-        </a>
+        </button>
 
         {/* Desktop links */}
         <ul className="hidden items-center gap-10 md:flex">

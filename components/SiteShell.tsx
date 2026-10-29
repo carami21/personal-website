@@ -34,11 +34,22 @@ export default function SiteShell() {
 
   const handleDone = useCallback(() => setTransitioning(false), [])
 
+  // The CR mark in the nav drops back to the START screen the site opens
+  // on, so the intro is reachable again without a reload.
+  const handleHome = useCallback(() => {
+    setEntered(false)
+    const html = document.documentElement
+    const prev = html.style.scrollBehavior
+    html.style.scrollBehavior = 'auto'
+    window.scrollTo(0, 0)
+    html.style.scrollBehavior = prev
+  }, [])
+
   return (
     <main id="top">
       {entered ? (
         <>
-          <Nav />
+          <Nav onHome={handleHome} />
           <About />
           <Projects />
           <Resume />

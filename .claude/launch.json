@@ -4,8 +4,10 @@
     {
       "name": "portfolio-dev",
       "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "dev"],
-      "cwd": "/Users/carlosramirez/Desktop/BigLosBrain/03 Projects/Personal Website/personal-website",
+      "runtimeArgs": [
+        "run",
+        "dev"
+      ],
       "port": 3000
     }
   ]

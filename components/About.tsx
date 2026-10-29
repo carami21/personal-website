@@ -1,3 +1,18 @@
+const SAVES = [
+  {
+    label: 'Save 1',
+    text:
+      'I graduated with a Bachelor of Science in Computer Science with Arizona State ' +
+      'University in the Ira A. Fulton School of Engineering',
+  },
+  {
+    label: 'Current Save',
+    text:
+      'I am currently pursuing a Masters of Science in Business Analytics with Arizona ' +
+      'State University in the W.P. Carey School of Business',
+  },
+]
+
 const CURRENTLY_BUILDING = [
   'Supply Chain Forecasting Dashboard',
   'BI Pipeline Project',
@@ -26,13 +41,23 @@ export default function About() {
             CS Graduate · App Builder · Incoming MSBA @ W.P. Carey
           </p>
           <p className="mt-6 max-w-prose leading-relaxed text-cream/85">
-            I grew up on a PS2 and a CRT in a dark room, and I never really stopped pressing
-            START. Now I build iOS apps, data pipelines, and dashboards — from Pool Map, shipped
-            on the App Store, to a 50,000-record analytics project and an AI sustainability
-            app built on Intel corporate data. Next save point: the W.P. Carey MSBA (Supply Chain
-            Analytics) at ASU, on the way to building things that ship, scale, and pay for
-            themselves.
+            I grew up on a PS2 where I gained the love for technology and simply never
+            stopped pressing START. Now I build iOS apps, data pipelines, and dashboards
+            that range from Pool Map, shipped on the App Store, to a 50,000-record
+            analytics project and an AI sustainability app built on Intel corporate data.
           </p>
+
+          {/* Education as PS2 save slots */}
+          <dl className="mt-6 max-w-prose space-y-3">
+            {SAVES.map((s) => (
+              <div key={s.label} className="flex flex-col gap-1 border-l-2 border-ps2/40 pl-4 sm:flex-row sm:gap-3">
+                <dt className="shrink-0 font-mono text-xs uppercase tracking-[0.2em] text-ps2-light">
+                  {s.label}
+                </dt>
+                <dd className="leading-relaxed text-cream/85">{s.text}</dd>
+              </div>
+            ))}
+          </dl>
 
           <div className="mt-8">
             <p className="font-mono text-xs uppercase tracking-[0.25em] text-muted">
@@ -83,8 +108,8 @@ export default function About() {
             <p className="font-mono text-xs text-muted">MEMORY CARD (PS2)</p>
             <p className="mt-2 font-mono text-sm text-cream/80">Slot 1 — Carlos Ramirez</p>
             <div className="mt-6 space-y-2 text-left font-mono text-xs text-muted">
-              <p><span className="text-ps2-light">SAVE</span> — B.S. Computer Science ✓</p>
-              <p><span className="text-ps2-light">LOAD</span> — MSBA · W.P. Carey · 2026</p>
+              <p><span className="text-ps2-light">SAVE 1</span> — B.S. Computer Science ✓</p>
+              <p><span className="text-ps2-light">CURRENT SAVE</span> — MSBA · W.P. Carey</p>
               <p><span className="text-ps2-light">NEW GAME+</span> — Data Analytics</p>
             </div>
           </div>
